@@ -13,7 +13,8 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          docker.build registry + ":$BUILD_NUMBER"
+          dockerfile = "Dockerfile-openj9-jdk11"
+          docker.build(registry + ":$BUILD_NUMBER", "-f ${dockerfile}")
         }
       }
     }

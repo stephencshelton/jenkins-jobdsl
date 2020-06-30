@@ -1,4 +1,4 @@
-job('Seed/Seed_Job') {
+job('Seed_Job') {
   label('master')
   multiscm {
     git {

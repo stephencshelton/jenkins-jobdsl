@@ -21,7 +21,7 @@ containers.each { container ->
     }
     definition {
       cps {
-        script(readFileFromWorkspace('resources/buildFromGithub.groovy'))
+        script(readFileFromWorkspace('resources/buildGithubContainer.groovy'))
         sandbox()
       }
     }

@@ -13,7 +13,7 @@ containers = [
     ]
 ]
 containers.each { container ->
-  pipelineJob("Build ${container.getKey()} Container") {
+  pipelineJob("Build-${container.getKey()}-Container") {
     parameters {
       container.getValue().each { param ->
         stringParam(param.name, param.defaultValue, param.description)

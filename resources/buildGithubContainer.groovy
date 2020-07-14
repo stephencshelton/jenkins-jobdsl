@@ -18,10 +18,14 @@ podTemplate(containers: [
         }
         // Will add this once I have the JCasC creating the secrets for jenkins
         stage('Push image to dockerhub') {
-          echo "k3c push $CONTAINER_NAME:0.0.${BUILD_NUMBER}"
-        }
+          withCredentials([file(credentialsId: 'docker-login', variable: 'DOCKER_CONFIG')]) {
+            dir("$WORKSPACE/.docker") {
+              sh "cp $DOCKER_CONFIG ."
+              sh "DOCKER_CONFIG=$DOCKER_CONFIG k3c push $CONTAINER_NAME:0.0.${BUILD_NUMBER}"
+            }
+          } 
+        } 
       }
     }
   }
 }
-\

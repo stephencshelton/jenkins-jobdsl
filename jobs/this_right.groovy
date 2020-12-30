@@ -1,4 +1,5 @@
 pipelineJob('My stupid shit') {
+  parameters {
   stringParam('discord', 'Posting as bot', 'Discord message')
   }
     definition {
@@ -7,3 +8,4 @@ pipelineJob('My stupid shit') {
     sandbox()
   }
   }
+ }

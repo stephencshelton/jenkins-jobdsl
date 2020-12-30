@@ -1,6 +1,6 @@
 pipelineJob('My stupid shit') {
   parameters {
-  stringParam('discord', 'Posting as bot', 'Discord message')
+  stringParam('discord_message', 'Posting as bot but DSL', 'Discord message')
   }
     definition {
     cps {

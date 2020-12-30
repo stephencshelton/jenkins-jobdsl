@@ -7,4 +7,3 @@ pipelineJob('My stupid shit') {
     sandbox()
   }
   }
-  }
